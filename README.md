@@ -45,6 +45,11 @@
 
 4. 访问应用：打开浏览器访问 `http://localhost:5173`
 
+> [!NOTE]
+> **Docker 网络扫描说明**  
+> 默认使用 Bridge 网络模式，容器无法直接扫描宿主机局域网。扫描时请使用 `host.docker.internal` 或宿主机的内网 IP。  
+> 不建议使用 `network_mode: host`，可能导致端口冲突。
+
 ## 📝 使用说明
 
 - **默认账号**:
