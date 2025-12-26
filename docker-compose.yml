@@ -4,18 +4,12 @@ services:
     container_name: homepagescan-backend
     restart: always
     volumes:
-      - ./backend/services.db:/app/services.db
+      - ./data:/app/data
       - ./backend/static:/app/static
     environment:
       - ADMIN_PASSWORD=admin
     expose:
       - "8000"
-    healthcheck:
-      test: [ "CMD", "curl", "-f", "http://localhost:8000/api/health" ]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      start_period: 10s
 
   frontend:
     build: ./frontend
@@ -24,5 +18,4 @@ services:
     ports:
       - "5173:80"
     depends_on:
-      backend:
-        condition: service_healthy
+      - backend
