@@ -4,8 +4,8 @@ services:
     container_name: homepagescan-backend
     restart: always
     volumes:
-      - ./data/services.db:/app/services.db
-      - ./data/static:/app/static
+      - ./backend/services.db:/app/services.db
+      - ./backend/static:/app/static
     environment:
       - ADMIN_PASSWORD=admin
     expose:

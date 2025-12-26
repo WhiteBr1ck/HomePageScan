@@ -40,7 +40,7 @@
 
 3. 构建并启动容器：
    ```bash
-   docker-compose up -d
+   docker-compose up -d --build
    ```
 
 4. 访问应用：打开浏览器访问 `http://localhost:5173`
