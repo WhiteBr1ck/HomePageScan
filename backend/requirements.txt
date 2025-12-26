@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+python-nmap
+sqlalchemy
+aiosqlite
+python-multipart
+httpx
+beautifulsoup4
+jinja2
+itsdangerous
+passlib[bcrypt]
+aiofiles
+python-jose[cryptography]

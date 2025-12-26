@@ -1,0 +1,22 @@
+<svg width="100%" height="100%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <!-- House gradient for depth -->
+        <linearGradient id="houseGrad" x1="20" y1="18" x2="80" y2="82" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#475569"/>
+            <stop offset="1" stop-color="#1E293B"/>
+        </linearGradient>
+        <!-- Magnifier shadow -->
+        <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.25"/>
+        </filter>
+    </defs>
+
+    <!-- Solid House with gradient + subtle stroke for visibility -->
+    <path d="M20 45 L50 18 L80 45 V82 H20 V45 Z" fill="url(#houseGrad)" stroke="#64748B" stroke-width="2"/>
+
+    <!-- Blue Magnifier with shadow -->
+    <g filter="url(#shadow)">
+        <circle cx="68" cy="68" r="16" fill="white" stroke="#3B82F6" stroke-width="5"/>
+        <path d="M80 80 L90 90" stroke="#3B82F6" stroke-width="5" stroke-linecap="round"/>
+    </g>
+</svg>
