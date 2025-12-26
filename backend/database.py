@@ -5,11 +5,13 @@ from sqlalchemy.future import select
 from datetime import datetime
 
 import os
+from pathlib import Path
 
 # Use /app/data/ directory for database in Docker, fallback to current directory for local dev
-DATA_DIR = os.environ.get("DATA_DIR", "./data")
-os.makedirs(DATA_DIR, exist_ok=True)
-DATABASE_URL = f"sqlite+aiosqlite:///{DATA_DIR}/services.db"
+DATA_DIR = Path(os.environ.get("DATA_DIR", "./data")).resolve()
+DATA_DIR.mkdir(parents=True, exist_ok=True)
+DB_PATH = DATA_DIR / "services.db"
+DATABASE_URL = f"sqlite+aiosqlite:///{DB_PATH}"
 
 engine = create_async_engine(DATABASE_URL, echo=False)
 AsyncSessionLocal = sessionmaker(
